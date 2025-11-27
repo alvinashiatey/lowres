@@ -6,7 +6,6 @@ A minimal, high-performance image resizer and compressor built with Rust and Tau
 
 - **Drag & Drop**: Simply drop your images to process them.
 - **Fast**: Powered by Rust for multi-threaded image processing.
-- **Minimal UI**: Clean, Swiss-style interface.
 - **Privacy Focused**: All processing happens locally on your machine.
 
 ## Installation
