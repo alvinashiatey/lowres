@@ -1,9 +1,9 @@
 use exif::{In, Reader, Tag};
-use image::{imageops::FilterType, DynamicImage, GenericImageView, ImageBuffer, Rgba, RgbaImage};
+use image::{imageops::FilterType, DynamicImage, GenericImageView, Rgba, RgbaImage};
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::fmt::{self, Display};
-use std::io::{BufReader, Cursor};
+use std::io::Cursor;
 use std::{fs::File, io::BufWriter, path::PathBuf};
 
 type Result<T> = anyhow::Result<T>;
