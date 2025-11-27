@@ -65,9 +65,9 @@ jobs:
       - name: install frontend dependencies
         run: pnpm install # change this to npm, pnpm or bun depending on which one you use.
 
-      - name: Generate changelog
-        id: changelog
-        uses: mikepenz/release-changelog-builder-action@{latest-release}
+      - name: "Build Changelog"
+        id: build_changelog
+        uses: mikepenz/release-changelog-builder-action@v6.0.1
 
       - name: Publish with Tauri
         uses: tauri-apps/tauri-action@v1
@@ -76,7 +76,7 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "v__VERSION__"
-          releaseBody: ${{ steps.changelog.outputs.changelog }}
+          releaseBody: ${{ steps.build_changelog.outputs.changelog }}
           releaseDraft: true
           prerelease: ${{ steps.release_meta.outputs.prerelease }}
           args: ${{ matrix.args }}
